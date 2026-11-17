@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Justify It, Review It, Aim Higher — Student Worksheet</title>
+<style>
+:root{
+  --bg:#f6f7f9; --paper:#fff; --ink:#1c2430; --muted:#5b6675; --line:#d5dae1;
+  --head:#1f3a5f; --head-ink:#fff; --soft:#eef2f7;
+  --bronze:#b5733a; --bronze-bg:#f8ede2;
+  --silver:#6b7684; --silver-bg:#eceff3;
+  --gold:#a8830a; --gold-bg:#fbf3d6;
+  --field:#fffdf3;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#12161c; --paper:#1a2029; --ink:#e6eaf0; --muted:#9aa5b4; --line:#323b48;
+    --head:#2b4a75; --head-ink:#fff; --soft:#232b37;
+    --bronze:#e0a06a; --bronze-bg:#33261a;
+    --silver:#b4bdc9; --silver-bg:#2a313b;
+    --gold:#e3c04d; --gold-bg:#352d10;
+    --field:#222a1f;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif}
+main{max-width:900px;margin:0 auto;padding:24px 16px 48px}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:28px}
+a{color:inherit;word-break:break-all}
+.kicker{margin:0;color:var(--muted);font-size:.9rem}
+h1{margin:.2em 0 .6em;font-size:1.7rem;line-height:1.25;color:var(--head)}
+@media (prefers-color-scheme:dark){h1{color:#a9c6ee}}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600}
+.tablewrap{overflow-x:auto}
+.info td{border:none;padding:4px 14px 4px 0}
+.info{margin:0 0 16px}
+.scenario{background:var(--soft);border-left:4px solid var(--head);padding:12px 16px;border-radius:4px;margin:0 0 20px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 8px}
+.tier{padding:10px 12px;border-radius:6px;border:1px solid}
+.tier b{display:block}
+.tier.bronze{background:var(--bronze-bg);border-color:var(--bronze)}
+.tier.silver{background:var(--silver-bg);border-color:var(--silver)}
+.tier.gold{background:var(--gold-bg);border-color:var(--gold)}
+.hint{color:var(--muted);font-style:italic;margin:6px 0 20px}
+h2{font-size:1.1rem;margin:28px 0 8px}
+.q{margin-top:28px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.qhead{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;background:var(--head);color:var(--head-ink);padding:10px 14px}
+.qhead .num{font-weight:700;font-size:1.1rem}
+.qhead .title{flex:1;min-width:200px}
+.badge{font-size:.8rem;font-weight:600;padding:2px 9px;border-radius:999px;background:rgba(255,255,255,.18);white-space:nowrap}
+.qbody{padding:6px 16px 14px}
+.qbody table{margin-bottom:12px}
+.qbody p{margin:.6em 0}
+.bank{background:var(--gold-bg);border:1px dashed var(--gold);padding:8px 12px;border-radius:6px;margin:10px 0}
+input[type=text],textarea{font:inherit;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:4px;padding:4px 8px}
+input[type=text]{width:100%;min-width:60px}
+input.short{width:5.5em}
+input.inline{display:inline-block;width:10em;margin:0 2px}
+input.wide{display:inline-block;width:min(100%,22em)}
+textarea{width:100%;min-height:80px;resize:vertical}
+textarea.tall{min-height:110px}
+.choice{white-space:nowrap}
+.choice label{margin-right:8px;cursor:pointer}
+.route label{margin-right:12px;white-space:nowrap}
+:focus-visible{outline:3px solid #2f7de1;outline-offset:2px}
+.exit{margin-top:32px;border:2px solid var(--head);border-radius:8px;overflow:hidden}
+.exit .qhead{font-weight:700}
+.exit .qbody{padding:12px 16px}
+footer{margin-top:24px;text-align:center;color:var(--muted);font-size:.85rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:640px){.tiers{grid-template-columns:1fr}.sheet{padding:16px}}
+@media print{
+  body{background:#fff;font-size:11pt}
+  main{max-width:none;padding:0}
+  .sheet{border:none;padding:0}
+  .q,.exit,table{break-inside:avoid}
+  input[type=text],textarea{border:none;border-bottom:1px solid #888;background:transparent;border-radius:0}
+  textarea{min-height:60px}
+  .qhead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<main>
+<div class="sheet">
+
+<p class="kicker">Grade 11 · Artificial Intelligence · Term 1 · Week 12</p>
+<h1>Justify It, Review It, Aim Higher — Student Worksheet</h1>
+
+<table class="info"><tr>
+  <td><b>Name:</b> <input type="text" class="wide" aria-label="Name"></td>
+  <td><b>Class:</b> <input type="text" class="short" aria-label="Class"></td>
+  <td><b>Date:</b> 16/11/2026</td>
+  <td class="route"><b>My route:</b>
+    <label><input type="radio" name="route"> Bronze</label>
+    <label><input type="radio" name="route"> Silver</label>
+    <label><input type="radio" name="route"> Gold</label></td>
+</tr></table>
+
+<div class="scenario"><b>Scenario.</b> Two teams show the same Bus Notice Assistant. Team A says “It is fast and it sounds great!” Team B says what they optimised, who it helps, what it cost and how they measured it. Today you justify your choices with evidence, review each other’s work, and set a goal you can check. All data in this worksheet is made up. Never type names or personal details.</div>
+
+<div class="tiers">
+  <div class="tier bronze"><b>BRONZE</b>Q1–Q6 · DOK 1–2</div>
+  <div class="tier silver"><b>SILVER</b>Q4–Q9 · DOK 2–3</div>
+  <div class="tier gold"><b>GOLD</b>Q7–Q12 · DOK 3–4</div>
+</div>
+<p class="hint">Start on your route. Move up a tier when you finish early. Show your working. Use pp for percentage points.</p>
+
+<h2>Hands-on lab links (scan or type; same page, four tabs)</h2>
+<div class="tablewrap"><table>
+<tr><th>Station</th><th>What you do</th><th>Record it here</th></tr>
+<tr><td><b>H1</b> Justify Studio<br><a href="https://may-taha1.github.io/Justify-and-Aim-Lab/">https://may-taha1.github.io/Justify-and-Aim-Lab/</a></td>
+  <td>Build two justifications with the frame: optimised X for Y, cost Z, measured W.</td>
+  <td>My frame: I optimised <input type="text" class="inline" aria-label="optimised"> for <input type="text" class="inline" aria-label="for"> , which cost <input type="text" class="inline" aria-label="cost"> , and I verified it by measuring <input type="text" class="inline" aria-label="measuring"></td></tr>
+<tr><td><b>H2</b> Evidence Check<br><a href="https://may-taha1.github.io/Justify-and-Aim-Lab/">https://may-taha1.github.io/Justify-and-Aim-Lab/</a></td>
+  <td>Sort claims, verify a notice against the timetable, scan an exhibit for personal data.</td>
+  <td>Claims right: <input type="text" class="short" aria-label="Claims right"> / 6.<br>The wrong notice was Route <input type="text" class="short" aria-label="Route"> (it should leave at <input type="text" class="short" aria-label="time">).<br>Personal data I removed: <input type="text" class="inline" aria-label="Personal data removed"></td></tr>
+<tr><td><b>H3</b> Peer Review Carousel<br><a href="https://may-taha1.github.io/Justify-and-Aim-Lab/">https://may-taha1.github.io/Justify-and-Aim-Lab/</a></td>
+  <td>Calibrate, leave feed-forward, act on one comment and re-measure.</td>
+  <td>My calibration matched <input type="text" class="short" aria-label="Calibration matched"> / 5 rows.<br>Edge-case tests: <input type="text" class="short" aria-label="Tests before"> of 3 → <input type="text" class="short" aria-label="Tests after"> of 3 = <input type="text" class="short" aria-label="Gain"> pp.<br>My best feed-forward: <input type="text" class="inline" aria-label="Best feed-forward"></td></tr>
+<tr><td><b>H4</b> Goal and Stakes<br><a href="https://may-taha1.github.io/Justify-and-Aim-Lab/">https://may-taha1.github.io/Justify-and-Aim-Lab/</a></td>
+  <td>Build a measurable Term-2 goal and a higher-stakes plan.</td>
+  <td>My goal: <input type="text" aria-label="My goal"><br>Higher-stakes lines strongest: <input type="text" class="short" aria-label="Strongest lines"> / 4.</td></tr>
+</table></div>
+
+<!-- Q1 -->
+<section class="q"><div class="qhead"><span class="num">Q1</span><span class="title">Match the term · Match</span><span class="badge">DOK 1 · Bronze</span></div>
+<div class="qbody">
+<p>Write the letter of the correct meaning next to each term. One meaning is a distractor.</p>
+<div class="tablewrap"><table>
+<tr><th>Term</th><th>Letter</th><th>Meanings</th></tr>
+<tr><td>1 optimise</td><td><input type="text" class="short" maxlength="1" aria-label="Letter for optimise"></td><td>A Improve a solution against a goal, usually by trading off another dimension</td></tr>
+<tr><td>2 performance evidence</td><td><input type="text" class="short" maxlength="1" aria-label="Letter for performance evidence"></td><td>B A measured result that proves a claim, such as a before-and-after number</td></tr>
+<tr><td>3 verify-before-trust</td><td><input type="text" class="short" maxlength="1" aria-label="Letter for verify-before-trust"></td><td>C Check an output against the task and a trusted source before believing it</td></tr>
+<tr><td>4 feed-forward</td><td><input type="text" class="short" maxlength="1" aria-label="Letter for feed-forward"></td><td>D Feedback that names a specific next step, not just praise</td></tr>
+<tr><td>5 calibration</td><td><input type="text" class="short" maxlength="1" aria-label="Letter for calibration"></td><td>E Reviewers agreeing on a standard, settled by evidence</td></tr>
+<tr><td></td><td></td><td>F A goal with no target</td></tr>
+</table></div>
+</div></section>
+
+<!-- Q2 -->
+<section class="q"><div class="qhead"><span class="num">Q2</span><span class="title">True or false · True / False</span><span class="badge">DOK 1 · Bronze</span></div>
+<div class="qbody">
+<p>Circle True or False for each statement.</p>
+<div class="tablewrap"><table>
+<tr><th>Statement</th><th>Circle one</th></tr>
+<tr><td>a A fast, confident, detailed output proves the solution works.</td><td class="choice"><label><input type="radio" name="q2a"> True</label> <label><input type="radio" name="q2a"> False</label></td></tr>
+<tr><td>b Performance evidence is a before-and-after number or a comparison.</td><td class="choice"><label><input type="radio" name="q2b"> True</label> <label><input type="radio" name="q2b"> False</label></td></tr>
+<tr><td>c Feedback only counts if you act on it and re-measure.</td><td class="choice"><label><input type="radio" name="q2c"> True</label> <label><input type="radio" name="q2c"> False</label></td></tr>
+<tr><td>d “Get better at AI” is a good measurable goal.</td><td class="choice"><label><input type="radio" name="q2d"> True</label> <label><input type="radio" name="q2d"> False</label></td></tr>
+</table></div>
+</div></section>
+
+<!-- Q3 -->
+<section class="q"><div class="qhead"><span class="num">Q3</span><span class="title">Complete the sentences · Fill in</span><span class="badge">DOK 1 · Bronze</span></div>
+<div class="qbody">
+<p>Use each word from the word bank once.</p>
+<div class="bank"><b>Word bank:</b> trade-off · evidence · source · question · measurable</div>
+<p>1 In “I optimised X for Y, which cost Z”, Z is the <input type="text" class="inline" aria-label="Blank 1">.</p>
+<p>2 A before-and-after number is performance <input type="text" class="inline" aria-label="Blank 2">.</p>
+<p>3 The official timetable is the trusted <input type="text" class="inline" aria-label="Blank 3"> for a notice.</p>
+<p>4 Feed-forward has a strength, one improvement and a <input type="text" class="inline" aria-label="Blank 4">.</p>
+<p>5 A goal with a target you can check is <input type="text" class="inline" aria-label="Blank 5">.</p>
+</div></section>
+
+<!-- Q4 -->
+<section class="q"><div class="qhead"><span class="num">Q4</span><span class="title">Describes or justifies? · Sort</span><span class="badge">DOK 2 · Bronze · Silver</span></div>
+<div class="qbody">
+<p>Write D if the sentence only describes, or J if it justifies.</p>
+<div class="tablewrap"><table>
+<tr><th>Item</th><th>D / J</th></tr>
+<tr><td>a “My assistant writes notices for parents.”</td><td><input type="text" class="short" maxlength="1" aria-label="Q4a"></td></tr>
+<tr><td>b “I added the timetable to the data so parents act on the right time; it cost 4 seconds a notice.”</td><td><input type="text" class="short" maxlength="1" aria-label="Q4b"></td></tr>
+<tr><td>c “It is fast, clear and looks great.”</td><td><input type="text" class="short" maxlength="1" aria-label="Q4c"></td></tr>
+<tr><td>d “I checked 5 fresh records against the timetable: 2 of 5 became 4 of 5 (+40 pp).”</td><td><input type="text" class="short" maxlength="1" aria-label="Q4d"></td></tr>
+</table></div>
+</div></section>
+
+<!-- Q5 -->
+<section class="q"><div class="qhead"><span class="num">Q5</span><span class="title">Evidence in pp · Calculate</span><span class="badge">DOK 2 · Bronze · Silver</span></div>
+<div class="qbody">
+<p>Complete the table. Gain = after − before, in percentage points (pp).</p>
+<div class="tablewrap"><table>
+<tr><th>Case</th><th>Before</th><th>After</th><th>Before %</th><th>After %</th><th>Gain (pp)</th></tr>
+<tr><td>A</td><td>2 of 5</td><td>4 of 5</td><td><input type="text" class="short" aria-label="A before %"></td><td><input type="text" class="short" aria-label="A after %"></td><td><input type="text" class="short" aria-label="A gain"></td></tr>
+<tr><td>B</td><td>6 of 10</td><td>9 of 10</td><td><input type="text" class="short" aria-label="B before %"></td><td><input type="text" class="short" aria-label="B after %"></td><td><input type="text" class="short" aria-label="B gain"></td></tr>
+<tr><td>C</td><td>10 of 20</td><td>15 of 20</td><td><input type="text" class="short" aria-label="C before %"></td><td><input type="text" class="short" aria-label="C after %"></td><td><input type="text" class="short" aria-label="C gain"></td></tr>
+</table></div>
+<p>A teammate writes on a showcase slide: “Improvement: 40%.” Rewrite it with the correct unit and both numbers:</p>
+<textarea aria-label="Q5 rewrite"></textarea>
+</div></section>
+
+<!-- Q6 -->
+<section class="q"><div class="qhead"><span class="num">Q6</span><span class="title">Rate the feedback · Evaluate</span><span class="badge">DOK 2 · Bronze · Silver</span></div>
+<div class="qbody">
+<p>Rate each comment: A = actionable, V = vague, P = about the person. Then rewrite the weakest comment.</p>
+<div class="tablewrap"><table>
+<tr><th>Item</th><th>A / V / P</th></tr>
+<tr><td>1 “Nice solution!”</td><td><input type="text" class="short" maxlength="1" aria-label="Q6.1"></td></tr>
+<tr><td>2 “You are clearly the clever one.”</td><td><input type="text" class="short" maxlength="1" aria-label="Q6.2"></td></tr>
+<tr><td>3 “Strength: you named the 4-second cost. Improvement: add a before and after number for usability. Question: what happens with a blank record?”</td><td><input type="text" class="short" maxlength="1" aria-label="Q6.3"></td></tr>
+<tr><td>4 “Improvement: test the 3 edge cases (blank, 0 min, missing route) and report how many pass.”</td><td><input type="text" class="short" maxlength="1" aria-label="Q6.4"></td></tr>
+</table></div>
+<p>Rewrite “It could be better.” as feed-forward (strength + improvement + question):</p>
+<p class="hint">Sentence frame: Strength: ______. Improvement: ______ (tied to a number). Question: ______?</p>
+<textarea aria-label="Q6 rewrite"></textarea>
+</div></section>
+
+<!-- Q7 -->
+<section class="q"><div class="qhead"><span class="num">Q7</span><span class="title">Verify before you trust · Analyse</span><span class="badge">DOK 3 · Silver · Gold</span></div>
+<div class="qbody">
+<p>Three notices came back fast, confident and detailed (made-up). Timetable: Route 7 07:10 · Route 15 07:25 · Route 30 07:55.</p>
+<div class="tablewrap"><table>
+<tr><th>Notice</th><th>Delay</th><th>The notice says</th></tr>
+<tr><td>a Route 7</td><td>5 min</td><td>“now leaves at 07:15”</td></tr>
+<tr><td>b Route 15</td><td>20 min</td><td>“now leaves at 07:35”</td></tr>
+<tr><td>c Route 30</td><td>10 min</td><td>“now leaves at 08:05”</td></tr>
+</table></div>
+<p>a) Which notice is wrong, and what should it say? <input type="text" class="wide" aria-label="Q7a"></p>
+<p>b) What is the trusted source you checked against? <input type="text" class="wide" aria-label="Q7b"></p>
+<p>c) Why is “it was fast, confident and detailed” not enough to trust a notice?</p>
+<textarea aria-label="Q7c"></textarea>
+</div></section>
+
+<!-- Q8 -->
+<section class="q"><div class="qhead"><span class="num">Q8</span><span class="title">Clean the exhibit · Apply</span><span class="badge">DOK 3 · Silver · Gold</span></div>
+<div class="qbody">
+<p>A showcase slide is about to be shown. For each item, decide whether to remove it (Y or N) and say what to show instead.</p>
+<div class="tablewrap"><table>
+<tr><th>Item on the slide</th><th>Remove? (Y / N)</th><th>Show instead</th></tr>
+<tr><td>Photo of the bus driver</td><td><input type="text" class="short" maxlength="1" aria-label="Remove photo"></td><td><input type="text" aria-label="Instead of photo"></td></tr>
+<tr><td>Made-up route numbers</td><td><input type="text" class="short" maxlength="1" aria-label="Remove route numbers"></td><td><input type="text" aria-label="Instead of route numbers"></td></tr>
+<tr><td>The official public timetable</td><td><input type="text" class="short" maxlength="1" aria-label="Remove timetable"></td><td><input type="text" aria-label="Instead of timetable"></td></tr>
+<tr><td>A recording of a student’s voice</td><td><input type="text" class="short" maxlength="1" aria-label="Remove recording"></td><td><input type="text" aria-label="Instead of recording"></td></tr>
+<tr><td>Screenshot showing a student’s account login</td><td><input type="text" class="short" maxlength="1" aria-label="Remove screenshot"></td><td><input type="text" aria-label="Instead of screenshot"></td></tr>
+</table></div>
+<p>Which governance rule is each removal protecting?</p>
+<textarea aria-label="Q8 governance rules"></textarea>
+</div></section>
+
+<!-- Q9 -->
+<section class="q"><div class="qhead"><span class="num">Q9</span><span class="title">Act on feedback and re-measure · Trace</span><span class="badge">DOK 3 · Silver · Gold</span></div>
+<div class="qbody">
+<p>Your exhibit received three comments: “Nice solution!”, “How do you handle a blank record?” and “Change the colours.” Edge-case tests before: 1 of 3 passed. Complete the table.</p>
+<div class="tablewrap"><table>
+<tr><th>Step</th><th>My answer</th></tr>
+<tr><td>Most useful comment (and why)</td><td><input type="text" aria-label="Most useful comment"></td></tr>
+<tr><td>ONE component I change</td><td><input type="text" aria-label="Component I change"></td></tr>
+<tr><td>Edge-case tests after (my prediction)</td><td><input type="text" aria-label="Tests after"></td></tr>
+<tr><td>Gain in pp</td><td><input type="text" aria-label="Gain in pp"></td></tr>
+<tr><td>Trade-off it might cost</td><td><input type="text" aria-label="Trade-off"></td></tr>
+</table></div>
+</div></section>
+
+<!-- Q10 -->
+<section class="q"><div class="qhead"><span class="num">Q10</span><span class="title">Justify two choices · Create</span><span class="badge">DOK 3 · Gold</span></div>
+<div class="qbody">
+<p>Write two justifications for the Bus Notice Assistant (or your own solution): one design choice and one evaluation choice. Use the frame: I optimised X for Y, which cost Z, and I verified the gain by measuring W.</p>
+<div class="tablewrap"><table>
+<tr><th>Part of the frame</th><th>Design choice</th><th>Evaluation choice</th></tr>
+<tr><td>I optimised (X)</td><td><input type="text" aria-label="Design X"></td><td><input type="text" aria-label="Evaluation X"></td></tr>
+<tr><td>for (Y)</td><td><input type="text" aria-label="Design Y"></td><td><input type="text" aria-label="Evaluation Y"></td></tr>
+<tr><td>which cost (Z)</td><td><input type="text" aria-label="Design Z"></td><td><input type="text" aria-label="Evaluation Z"></td></tr>
+<tr><td>I verified by measuring (W)</td><td><input type="text" aria-label="Design W"></td><td><input type="text" aria-label="Evaluation W"></td></tr>
+</table></div>
+<p class="hint">Evidence must be a number with its unit, for example +40 pp, 10 s to 14 s, or 8 of 10 users.</p>
+</div></section>
+
+<!-- Q11 -->
+<section class="q"><div class="qhead"><span class="num">Q11</span><span class="title">Defend one trade-off · CER</span><span class="badge">DOK 4 · Gold</span></div>
+<div class="qbody">
+<p>A panel asks: “Why 80%, not 100%?” Your criteria: at least 80% correct AND under 15 seconds per notice. Results on 5 fresh records: Data lever 80% (+40 pp), 14 s · Structure lever 100% (+60 pp), 20 s · Prompt lever 20% (−20 pp), 6 s. Write a Claim, Evidence and Reasoning defence of the lever you would showcase.</p>
+<p><b>Claim:</b></p><textarea aria-label="Claim"></textarea>
+<p><b>Evidence (numbers with units):</b></p><textarea aria-label="Evidence"></textarea>
+<p><b>Reasoning (name the trade-off and one limit you did not test):</b></p><textarea class="tall" aria-label="Reasoning"></textarea>
+</div></section>
+
+<!-- Q12 -->
+<section class="q"><div class="qhead"><span class="num">Q12</span><span class="title">Set a Term-2 goal and plan for higher stakes · Create</span><span class="badge">DOK 4 · Gold</span></div>
+<div class="qbody">
+<p>Write ONE measurable Term-2 goal, then say how your solution would change if real parents used it with live delay data.</p>
+<div class="tablewrap"><table>
+<tr><th>Part</th><th>My answer</th></tr>
+<tr><td>The skill that carried across my term</td><td><input type="text" aria-label="Skill"></td></tr>
+<tr><td>My goal (metric, baseline, target)</td><td><input type="text" aria-label="Goal"></td></tr>
+<tr><td>Check it by (week) and how</td><td><input type="text" aria-label="Check by"></td></tr>
+<tr><td>My first step (start this week)</td><td><input type="text" aria-label="First step"></td></tr>
+<tr><td>For higher stakes I would strengthen… and add this check…</td><td><input type="text" aria-label="Higher stakes"></td></tr>
+</table></div>
+<p class="hint"><b>Weak:</b> “Get better at AI.” &nbsp; <b>Strong:</b> “Raise fresh-record accuracy from 60% to 80% by week 6, checked on 10 held-out records.”</p>
+</div></section>
+
+<!-- Exit ticket -->
+<section class="exit"><div class="qhead"><span class="title">Exit ticket</span></div>
+<div class="qbody">
+<p><b>1 Justify it.</b> Write one choice you made, using the frame: optimised X for Y, cost Z, measured W.</p>
+<textarea aria-label="Exit 1"></textarea>
+<p><b>2 Number it.</b> Write one number from this term with its unit (for example +40 pp) and one limit about it.</p>
+<textarea aria-label="Exit 2"></textarea>
+<p><b>3 Aim it.</b> Write your Term-2 goal with a target and the way you will check it.</p>
+<textarea aria-label="Exit 3"></textarea>
+</div></section>
+
+<footer>
+  <div>Grade 11 AI · Week 12 · Justify It, Review It, Aim Higher · Student worksheet · ADNOC Schools</div>
+  <div>Classification: Internal General Purpose</div>
+</footer>
+
+</div>
+</main>
+</body>
+</html>
